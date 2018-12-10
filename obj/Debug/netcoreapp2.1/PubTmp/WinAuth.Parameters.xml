@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<parameters>
-  <parameter name="IIS Web Application Name" description="" value="Default Web Site\AuthApp" tags="IisApp">
-    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\GitRepos\\WinAuth\\bin\\Debug\\netcoreapp2\.1\\publish\\$" />
-  </parameter>
-</parameters>
