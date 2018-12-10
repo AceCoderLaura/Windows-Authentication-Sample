@@ -54,10 +54,7 @@ namespace WinAuth
             }
 
             app.UseHttpsRedirection();
-            app.UseStaticFiles();
             app.UseCookiePolicy();
-
-            app.UseMvc();
             
             app.Run(async (context) =>
             {
