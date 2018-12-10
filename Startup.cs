@@ -65,14 +65,12 @@ namespace WinAuth
                 {
                     var user = (WindowsIdentity)context.User.Identity;
 
-                    await context.Response
-                        .WriteAsync($"User: {user.Name}\tState: {user.ImpersonationLevel}\n");
+                    await context.Response.WriteAsync($"User: {user.Name}\tState: {user.ImpersonationLevel}\n");
 
                     WindowsIdentity.RunImpersonated(user.AccessToken, () =>
                     {
                         var impersonatedUser = WindowsIdentity.GetCurrent();
-                        var message =
-                            $"User: {impersonatedUser.Name}\tState: {impersonatedUser.ImpersonationLevel}";
+                        var message = $"User: {impersonatedUser.Name}\tState: {impersonatedUser.ImpersonationLevel}";
 
                         var bytes = Encoding.UTF8.GetBytes(message);
                         context.Response.Body.Write(bytes, 0, bytes.Length);
